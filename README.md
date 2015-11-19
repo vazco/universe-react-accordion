@@ -7,7 +7,15 @@ React accordion component
 meteor add universe:react-accordion
 ```
 
+## [Demo](http://react-accordion.meteor.com)
+Checkout the [demo](http://react-accordion.meteor.com)
+
 ## Usage
+Components of this package use universe:modules package for import/export.
+So you can import it by es6 import api `import {Accordion, AccordionItem} from '{universe:react-accordion}'`
+or by `System.import('universe:react-accordion').then(function(module){/* your code */})` in regular js.
+
+In CoffeeScript you can use package [universe:modules-for-coffee](https://atmospherejs.com/universe/modules-for-coffee)
 
 ```javascript
 import {Accordion, AccordionItem} from '{universe:react-accordion}';
