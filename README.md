@@ -18,6 +18,7 @@ or by `System.import('universe:react-accordion').then(function(module){/* your c
 In CoffeeScript you can use package [universe:modules-for-coffee](https://atmospherejs.com/universe/modules-for-coffee)
 
 ```javascript
+
 import {Accordion, AccordionItem} from '{universe:react-accordion}';
 
 …
@@ -38,8 +39,8 @@ import {Accordion, AccordionItem} from '{universe:react-accordion}';
 			</Accordion>
 		);
 	}
-
 …
+```
 
 ## options / PropTypes
 
