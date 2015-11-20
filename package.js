@@ -1,10 +1,10 @@
 Package.describe({
   name: 'universe:react-accordion',
-  version: '0.1.0',
+  version: '0.1.1',
   // Brief, one-line summary of the package.
   summary: 'React accordion component',
   // URL to the Git repository containing the source code for this package.
-  git: '',
+  git: 'https://github.com/vazco/universe-react-accordion',
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
