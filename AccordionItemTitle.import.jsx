@@ -10,20 +10,24 @@ export default class AccordionItemTitle extends React.Component {
     };
 
     return (
-      <h3 aria-controls={`react-sanfona-item-body-${ this.props.uuid }`}
-        className="react-sanfona-item-title"
-        id={`react-safona-item-title-${ this.props.uuid }`}
+      <div aria-controls={`item-body-${ this.props.uuid }`}
+        className="header"
+        id={`item-title-${ this.props.uuid }`}
         onClick={this.props.onClick}
         style={style}>
         {this.props.title}
-      </h3>
+        {this.props.subtitle}
+      </div>
     )
   }
 
 }
 
+
+
 AccordionItemTitle.propTypes = {
   onClick: React.PropTypes.func,
-  title: React.PropTypes.string,
+  title: React.PropTypes.node,
+  subtitle: React.PropTypes.node,
   uuid: React.PropTypes.string
 };

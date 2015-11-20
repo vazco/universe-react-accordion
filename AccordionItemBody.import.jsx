@@ -10,11 +10,11 @@ export default class AccordionItemBody extends React.Component {
     };
 
     return (
-      <div aria-labelledby={`react-safona-item-title-${ this.props.uuid }`}
-        className="react-sanfona-item-body"
-        id={`react-safona-item-body-${ this.props.uuid }`}
+      <div aria-labelledby={`item-title-${ this.props.uuid }`}
+        className="item-body"
+        id={`item-body-${ this.props.uuid }`}
         style={style}>
-        <div className="react-sanfona-item-body-wrapper">
+        <div className="body-wrapper">
           {this.props.children}
         </div>
       </div>
