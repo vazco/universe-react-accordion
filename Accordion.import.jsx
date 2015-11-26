@@ -1,17 +1,27 @@
 'use strict';
 import {classNames} from '{universe:utilities-react}';
+import {cloneWithProps} from '{universe:utilities-react}';
 
-export default class Accordion extends React.Component {
-
-    constructor(props) {
-        super(props);
-
-        let activeItems = !Array.isArray(props.activeItems) ?
-            [props.activeItems] :
-            props.activeItems;
-
-        this.state = {activeItems: activeItems};
-    }
+export default React.createClass( {
+    displayName: 'Accordion',
+    propTypes: {
+        allowMultiple: React.PropTypes.bool,
+        activeItems: React.PropTypes.oneOfType([
+            React.PropTypes.number,
+            React.PropTypes.array
+        ])
+    },
+    getDefaultProps (){
+        return {
+            activeItems: [0],
+            allowMultiple: false
+        }
+    },
+    getInitialState () {
+        let activeItems = !Array.isArray(this.props.activeItems) ?
+            [this.props.activeItems] : this.props.activeItems;
+        return {activeItems};
+    },
 
     componentDidMount() {
         this.state.activeItems.forEach((index) => {
@@ -27,7 +37,7 @@ export default class Accordion extends React.Component {
                 this.refs[`item-${ index }`].allowOverflow();
             });
         });
-    }
+    },
 
     handleClick(index) {
         let newState = {};
@@ -46,24 +56,24 @@ export default class Accordion extends React.Component {
         }
 
         this.setState(newState);
-    }
+    },
 
     renderItems() {
-        if (!this.props.children) {
+        const {children} = this.props || {};
+        if (!children) {
             return null;
         }
 
-        return this.props.children.map((item, index) => {
+        return React.Children.map(children, (item, index) => {
             const expanded = this.state.activeItems.indexOf(index) !== -1;
-
             return React.cloneElement(item, {
-                expanded: expanded,
-                key: index,
+                expanded,
+                key: item.key || index,
                 onClick: this.handleClick.bind(this, index),
                 ref: `item-${ index }`
             });
         });
-    }
+    },
 
     render() {
         return (
@@ -73,17 +83,6 @@ export default class Accordion extends React.Component {
         );
     }
 
-}
+});
 
-Accordion.defaultProps = {
-    activeItems: [0],
-    allowMultiple: false
-};
 
-Accordion.propTypes = {
-    allowMultiple: React.PropTypes.bool,
-    activeItems: React.PropTypes.oneOfType([
-        React.PropTypes.number,
-        React.PropTypes.array
-    ])
-};

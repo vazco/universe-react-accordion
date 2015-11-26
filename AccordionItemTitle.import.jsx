@@ -1,33 +1,25 @@
-'use strict';
 
-export default class AccordionItemTitle extends React.Component {
-
+export default React.createClass({
+  displayName: 'AccordionItemTitle',
+  propTypes: {
+    onClick: React.PropTypes.func,
+    title: React.PropTypes.node,
+    subtitle: React.PropTypes.node,
+    gid: React.PropTypes.string
+  },
   render() {
-    var style = {
-      cursor: 'pointer',
-      margin: 0,
-      color : this.props.titleColor
-    };
-
     return (
-      <div aria-controls={`item-body-${ this.props.uuid }`}
+      <div aria-controls={`item-body-${ this.props.gid }`}
         className="header"
-        id={`item-title-${ this.props.uuid }`}
+        id={`item-title-${ this.props.gid }`}
         onClick={this.props.onClick}
-        style={style}>
-        {this.props.title}
-        {this.props.subtitle}
+        style={{cursor: 'pointer', margin: 0}}>
+          {this.props.title}
+          {this.props.subtitle}
       </div>
     )
   }
-
-}
-
+});
 
 
-AccordionItemTitle.propTypes = {
-  onClick: React.PropTypes.func,
-  title: React.PropTypes.node,
-  subtitle: React.PropTypes.node,
-  uuid: React.PropTypes.string
-};
+

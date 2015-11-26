@@ -1,6 +1,6 @@
 Package.describe({
   name: 'universe:react-accordion',
-  version: '0.1.1',
+  version: '0.1.2',
   // Brief, one-line summary of the package.
   summary: 'React accordion component',
   // URL to the Git repository containing the source code for this package.
@@ -13,6 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use([
+    'random',
     'universe:modules@0.6.1',
     'universe:utilities-react@0.5.3'
   ]);
