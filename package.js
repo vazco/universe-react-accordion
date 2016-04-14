@@ -1,6 +1,6 @@
 Package.describe({
   name: 'universe:react-accordion',
-  version: '0.1.2',
+  version: '0.1.3',
   // Brief, one-line summary of the package.
   summary: 'React accordion component',
   // URL to the Git repository containing the source code for this package.
@@ -11,16 +11,16 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.2.1');
+  api.versionsFrom('1.3');
   api.use([
     'random',
-    'universe:modules@0.6.1',
-    'universe:utilities-react@0.5.3'
+    'ecmascript',
+    'universe:utilities-react@1.0.0'
   ]);
-  api.addFiles('Accordion.import.jsx');
-  api.addFiles('AccordionItem.import.jsx');
-  api.addFiles('AccordionItemBody.import.jsx');
-  api.addFiles('AccordionItemTitle.import.jsx');
-  api.addFiles('index.import.js');
+  api.addFiles('Accordion.jsx');
+  api.addFiles('AccordionItem.jsx');
+  api.addFiles('AccordionItemBody.jsx');
+  api.addFiles('AccordionItemTitle.jsx');
+  api.addFiles('index.js');
 
 });

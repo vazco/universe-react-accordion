@@ -1,6 +1,7 @@
-'use strict';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import {classNames} from '{universe:utilities-react}';
+import classNames from 'classnames';
 
 import AccordionItemBody from './AccordionItemBody';
 import AccordionItemTitle from './AccordionItemTitle';

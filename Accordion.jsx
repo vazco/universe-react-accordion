@@ -1,6 +1,7 @@
-'use strict';
-import {classNames} from '{universe:utilities-react}';
-import {cloneWithProps} from '{universe:utilities-react}';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import classNames from 'classnames';
+import {cloneWithProps} from 'meteor/universe:utilities-react';
 
 export default React.createClass( {
     displayName: 'Accordion',
